@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Quicksand', sans-serif;
     font-weight: 300;
@@ -13,6 +17,10 @@ img {
 
 #site-header {
     background-color: white;
+}
+
+#site-header-mobile {
+    display: none;
 }
 
 .navbar-brand {
@@ -151,6 +159,9 @@ img {
     #site-header{
         display: none;
     }
+    #site-header-mobile {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 601px) {
@@ -165,4 +176,5 @@ img {
         margin-right: -50%;
         transform: translate(-50%, -50%)
     }
+
 }

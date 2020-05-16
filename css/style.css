@@ -39,17 +39,9 @@ img {
     padding-bottom: 50px;
 }
 
-#img-div {
-    position: relative;
-}
-
-#img-div img {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
+#profile {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .project_thumb {
@@ -123,7 +115,7 @@ img {
 }
 
 .text a {
-    font-size:15px;
+    font-size: 15px;
     color: white;
 }
 
@@ -144,5 +136,19 @@ img {
     #home {
         padding-top: 100px;
         padding-bottom: 70px;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    #img-div {
+        position: relative;
+    }
+    #img-div img {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
     }
 }

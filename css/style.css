@@ -44,6 +44,16 @@ img {
     padding-bottom: 50px;
 }
 
+#img-div img{
+    border-radius: 50%;
+}
+
+#contact{
+    background-color: #f3eff5;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .project_thumb {
     display: block;
     width: 100%;

@@ -147,6 +147,9 @@ img {
         padding-top: 100px;
         padding-bottom: 70px;
     }
+    #site-header{
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 601px) {

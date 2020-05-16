@@ -1,0 +1,77 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    color: #50514F;
+    background-color: #fffcff;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#site-header {
+    background-color: white;
+}
+
+.navbar-brand {
+    font-family: 'Quicksand', sans-serif;
+}
+
+#brand-title {
+    font-weight: 600;
+    color: #50514F;
+}
+
+#brand-sub {
+    color: #2f4550;
+    opacity: 75%;
+}
+
+#home {
+    padding-top: 300px;
+    padding-bottom: 300px;
+}
+
+#works {
+    background-color: #f3eff5;
+}
+
+#img-div {
+    position: relative;
+}
+
+#img-div img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+hr.dashed {
+    border-top: 1px dashed #bbb;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 600px) {
+    #home {
+      padding-top: 100px;
+      padding-bottom: 70px;
+    }
+  }

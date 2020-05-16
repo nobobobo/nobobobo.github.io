@@ -35,6 +35,8 @@ img {
 
 #works {
     background-color: #f3eff5;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 #img-div {
@@ -50,10 +52,79 @@ img {
     transform: translate(-50%, -50%)
 }
 
-hr.dashed {
-    border-top: 1px dashed #bbb;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.project_thumb {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#translation_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #A3F7B5;
+}
+
+#translation:hover #translation_overlay {
+    opacity: 85%;
+}
+
+#ml_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #40C9A2;
+}
+
+#ml:hover #ml_overlay {
+    opacity: 85%;
+}
+
+#weather_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #2F9C95;
+}
+
+#weather:hover #weather_overlay {
+    opacity: 85%;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.text a {
+    font-size:15px;
+    color: white;
 }
 
 .fa {
@@ -71,7 +142,7 @@ hr.dashed {
 
 @media only screen and (max-width: 600px) {
     #home {
-      padding-top: 100px;
-      padding-bottom: 70px;
+        padding-top: 100px;
+        padding-bottom: 70px;
     }
-  }
+}

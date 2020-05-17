@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-  }
+}
 
 body {
     font-family: 'Quicksand', sans-serif;
@@ -12,7 +12,7 @@ body {
 img {
     max-width: 100%;
     max-height: 100%;
-    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.6));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
 }
 
 #site-header {
@@ -53,11 +53,11 @@ img {
     padding-bottom: 50px;
 }
 
-#img-div img{
+#img-div img {
     border-radius: 50%;
 }
 
-#contact{
+#contact {
     background-color: #f3eff5;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -69,6 +69,8 @@ img {
     height: auto;
 }
 
+/* coolors: https://coolors.co/ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-a0c4ff-bdb2ff-ffc6ff-fffffc */
+
 #translation_overlay {
     position: absolute;
     top: 0;
@@ -79,7 +81,7 @@ img {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #A3F7B5;
+    background-color: #ffadad;
 }
 
 #translation:hover #translation_overlay {
@@ -96,7 +98,7 @@ img {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #40C9A2;
+    background-color: #ffd6a5;
 }
 
 #ml:hover #ml_overlay {
@@ -113,15 +115,66 @@ img {
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #2F9C95;
+    background-color: #fdffb6;
 }
 
 #weather:hover #weather_overlay {
     opacity: 85%;
 }
 
+#scheduler_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #caffbf;
+}
+
+#scheduler:hover #scheduler_overlay {
+    opacity: 85%;
+}
+
+#quiz_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #9bf6ff;
+}
+
+#quiz:hover #quiz_overlay {
+    opacity: 85%;
+}
+
+#pass_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #a0c4ff;
+}
+
+#pass:hover #pass_overlay {
+    opacity: 85%;
+}
+
 .text {
-    color: white;
+    color: #6d6875;
     font-size: 20px;
     font-weight: 500;
     position: absolute;
@@ -135,7 +188,7 @@ img {
 
 .text a {
     font-size: 15px;
-    color: white;
+    color: #6d6875;
 }
 
 .fa {
@@ -150,13 +203,12 @@ img {
 .fa:hover {
     opacity: 0.7;
 }
-
 @media only screen and (max-width: 600px) {
     #home {
         padding-top: 100px;
         padding-bottom: 70px;
     }
-    #site-header{
+    #site-header {
         display: none;
     }
     #site-header-mobile {
@@ -176,5 +228,18 @@ img {
         margin-right: -50%;
         transform: translate(-50%, -50%)
     }
+}
 
+#contact a {
+    text-decoration:none;
+}
+
+.zoom {
+    transition: transform .2s;
+    /* Animation */
+}
+
+.zoom:hover {
+    transform: scale(1.2);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }

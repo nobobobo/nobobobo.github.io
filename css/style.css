@@ -71,7 +71,7 @@ img {
 
 /* coolors: https://coolors.co/ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-a0c4ff-bdb2ff-ffc6ff-fffffc */
 
-#translation_overlay {
+#overlay1 {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -84,11 +84,11 @@ img {
     background-color: #ffadad;
 }
 
-#translation:hover #translation_overlay {
+#pj1:hover #overlay1 {
     opacity: 85%;
 }
 
-#ml_overlay {
+#overlay2 {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -101,11 +101,11 @@ img {
     background-color: #ffd6a5;
 }
 
-#ml:hover #ml_overlay {
+#pj2:hover #overlay2 {
     opacity: 85%;
 }
 
-#weather_overlay {
+#overlay3 {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -118,11 +118,11 @@ img {
     background-color: #fdffb6;
 }
 
-#weather:hover #weather_overlay {
+#pj3:hover #overlay3 {
     opacity: 85%;
 }
 
-#scheduler_overlay {
+#overlay4 {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -135,11 +135,11 @@ img {
     background-color: #caffbf;
 }
 
-#scheduler:hover #scheduler_overlay {
+#pj4:hover #overlay4 {
     opacity: 85%;
 }
 
-#quiz_overlay {
+#overlay5 {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -152,11 +152,11 @@ img {
     background-color: #9bf6ff;
 }
 
-#quiz:hover #quiz_overlay {
+#pj5:hover #overlay5 {
     opacity: 85%;
 }
 
-#pass_overlay {
+#overlay6 {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -169,7 +169,7 @@ img {
     background-color: #a0c4ff;
 }
 
-#pass:hover #pass_overlay {
+#pj6:hover #overlay6 {
     opacity: 85%;
 }
 

@@ -44,7 +44,7 @@ img {
 
 #works {
     background-color: #f3eff5;
-    padding-top: 50px;
+    padding-top: 25px;
     padding-bottom: 50px;
 }
 
@@ -203,6 +203,7 @@ img {
 .fa:hover {
     opacity: 0.7;
 }
+
 @media only screen and (max-width: 600px) {
     #home {
         padding-top: 100px;
@@ -231,7 +232,7 @@ img {
 }
 
 #contact a {
-    text-decoration:none;
+    text-decoration: none;
 }
 
 .zoom {
@@ -243,3 +244,25 @@ img {
     transform: scale(1.2);
     /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+
+.tab {
+    overflow: hidden;
+}
+
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+}
+
+.tabcontent {
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  }
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }

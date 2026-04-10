@@ -109,6 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
     })();
   }
 
+  // ── Logo strip fade-in ──
+  const logoStrip = document.querySelector('.logo-strip-logos');
+  if (logoStrip) {
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        logoStrip.classList.add('visible');
+      }
+    }, { threshold: 0.4 }).observe(logoStrip);
+  }
+
   // ── Resume modal ──
   const resumeBtn   = document.getElementById('resumeBtn');
   const resumeModal = document.getElementById('resumeModal');

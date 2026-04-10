@@ -156,9 +156,15 @@ input, textarea, select {
 
 /* ── Logo strip ── */
 .logo-strip {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
   border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-dark);
+  padding: 2rem 0;
+}
+.logo-strip-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px);
 }
 .logo-strip-label {
   font-family: var(--font-mono);
@@ -167,22 +173,30 @@ input, textarea, select {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
-
 .logo-strip-logos {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(2rem, 5vw, 4rem);
-  flex-wrap: wrap;
+  gap: clamp(3rem, 8vw, 7rem);
 }
 .logo-strip-logos img {
-  transition: opacity var(--transition);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .logo-strip-logos img[alt="Degas Ltd."] {
   filter: brightness(10);
 }
+.logo-strip-logos.visible img {
+  opacity: 0.75;
+  transform: none;
+}
+.logo-strip-logos.visible img:nth-child(1) { transition-delay: 0s; }
+.logo-strip-logos.visible img:nth-child(2) { transition-delay: 0.1s; }
+.logo-strip-logos.visible img:nth-child(3) { transition-delay: 0.2s; }
+.logo-strip-logos img:hover { opacity: 1; }
 
 /* ── Hero ── */
 .hero {

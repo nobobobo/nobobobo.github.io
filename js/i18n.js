@@ -77,6 +77,8 @@ const translations = {
     'nav.skills':   'Skills',
     'nav.projects': 'Projects',
     'nav.contact':  'Contact',
+    'hero.btn-resume': '履歴書を見る',
+    'contact.success': 'ありがとうございます。2営業日以内にご返信します。',
     'footer.sub':   'Machine Learning Scientist',
   },
 
@@ -149,6 +151,8 @@ const translations = {
     'contact.submit':             'Send Message',
     'contact.note':               '* Required fields',
 
+    'hero.btn-resume': 'Download CV',
+    'contact.success': 'Thank you! I\'ll get back to you within 2 business days.',
     'nav.about':    'About',
     'nav.services': 'Services',
     'nav.skills':   'Skills',
@@ -226,6 +230,8 @@ const translations = {
     'contact.submit':             '发送',
     'contact.note':               '* 为必填项',
 
+    'hero.btn-resume': '下载简历',
+    'contact.success': '感谢您的留言！我将在2个工作日内回复。',
     'nav.about':    'About',
     'nav.services': 'Services',
     'nav.skills':   'Skills',

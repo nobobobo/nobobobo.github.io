@@ -497,6 +497,17 @@ input, textarea, select {
   color: var(--text-dim);
   text-align: center;
 }
+.form-success {
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: var(--radius);
+  background: rgba(124, 111, 255, 0.05);
+}
+.form-success p {
+  color: var(--accent-2);
+  font-size: 1.1rem;
+}
 
 /* ── Footer ── */
 .footer {
@@ -535,6 +546,52 @@ input, textarea, select {
 .footer-bottom p {
   font-size: 0.82rem;
   color: var(--text-dim);
+}
+
+/* ── Resume modal ── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  height: 90vh;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.modal iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  z-index: 10;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--bg-card);
+  transition: color var(--transition), background var(--transition);
+}
+.modal-close:hover {
+  color: var(--text);
+  background: var(--bg-card-hover);
 }
 
 /* ── Animations ── */

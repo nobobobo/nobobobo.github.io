@@ -2,151 +2,168 @@
    nobox.jp — main.js
    ============================================= */
 
-// ── Nav scroll effect ──
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
+document.addEventListener('DOMContentLoaded', () => {
 
-// ── Mobile nav toggle ──
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.getElementById('navLinks');
+  // ── Nav scroll effect ──
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
+  // ── Mobile nav toggle ──
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
 
-// Close menu on link click
-navLinks.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => navLinks.classList.remove('open'));
-});
-
-// ── Scroll reveal ──
-const reveals = document.querySelectorAll(
-  '.section-label, .section-title, .service-card, .skill-group, .project-card, .about-text, .about-stats, .stat, .contact-lead, .contact-form'
-);
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      // Stagger sibling cards
-      const delay = entry.target.dataset.delay || 0;
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, delay);
-      revealObserver.unobserve(entry.target);
-    }
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-reveals.forEach(el => {
-  el.classList.add('reveal');
-  revealObserver.observe(el);
-});
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
 
-// Stagger cards in grids
-document.querySelectorAll('.services-grid .service-card, .projects-grid .project-card, .skills-wrapper .skill-group').forEach((el, i) => {
-  el.dataset.delay = (i % 3) * 80;
-});
+  // ── Scroll reveal ──
+  const reveals = document.querySelectorAll(
+    '.section-label, .section-title, .service-card, .skill-group, .project-card, .about-text, .about-stats, .stat, .contact-lead, .contact-form'
+  );
 
-// ── Particle canvas (hero background) ──
-(function initParticles() {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(el => {
+    el.classList.add('reveal');
+    revealObserver.observe(el);
+  });
+
+  document.querySelectorAll('.services-grid .service-card, .projects-grid .project-card, .skills-wrapper .skill-group').forEach((el, i) => {
+    el.dataset.delay = (i % 3) * 80;
+  });
+
+  // ── Particle canvas ──
   const canvas = document.getElementById('particleCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let W, H, particles;
 
-  let W, H, particles;
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
 
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth;
-    H = canvas.height = canvas.offsetHeight;
-  }
+    function Particle() { this.reset(); }
+    Particle.prototype.reset = function () {
+      this.x     = Math.random() * W;
+      this.y     = Math.random() * H;
+      this.r     = Math.random() * 1.5 + 0.4;
+      this.vx    = (Math.random() - 0.5) * 0.25;
+      this.vy    = (Math.random() - 0.5) * 0.25;
+      this.alpha = Math.random() * 0.5 + 0.1;
+    };
+    Particle.prototype.update = function () {
+      this.x += this.vx;
+      this.y += this.vy;
+      if (this.x < 0 || this.x > W) this.vx *= -1;
+      if (this.y < 0 || this.y > H) this.vy *= -1;
+    };
 
-  function Particle() {
-    this.reset();
-  }
-  Particle.prototype.reset = function () {
-    this.x  = Math.random() * W;
-    this.y  = Math.random() * H;
-    this.r  = Math.random() * 1.5 + 0.4;
-    this.vx = (Math.random() - 0.5) * 0.25;
-    this.vy = (Math.random() - 0.5) * 0.25;
-    this.alpha = Math.random() * 0.5 + 0.1;
-  };
-  Particle.prototype.update = function () {
-    this.x += this.vx;
-    this.y += this.vy;
-    if (this.x < 0 || this.x > W) this.vx *= -1;
-    if (this.y < 0 || this.y > H) this.vy *= -1;
-  };
+    const COUNT    = Math.min(120, Math.floor((window.innerWidth * window.innerHeight) / 12000));
+    const LINE_DIST = 130;
 
-  const COUNT = Math.min(120, Math.floor((window.innerWidth * window.innerHeight) / 12000));
-  const LINE_DIST = 130;
-
-  function init() {
     resize();
     particles = Array.from({ length: COUNT }, () => new Particle());
-  }
 
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
+    new ResizeObserver(resize).observe(canvas.parentElement);
 
-    // Lines between close particles
-    for (let i = 0; i < particles.length; i++) {
-      for (let j = i + 1; j < particles.length; j++) {
-        const dx = particles[i].x - particles[j].x;
-        const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < LINE_DIST) {
-          ctx.beginPath();
-          ctx.moveTo(particles[i].x, particles[i].y);
-          ctx.lineTo(particles[j].x, particles[j].y);
-          const a = (1 - dist / LINE_DIST) * 0.08;
-          ctx.strokeStyle = `rgba(124,111,255,${a})`;
-          ctx.lineWidth = 1;
-          ctx.stroke();
+    (function draw() {
+      ctx.clearRect(0, 0, W, H);
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < LINE_DIST) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(124,111,255,${(1 - dist / LINE_DIST) * 0.08})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
         }
       }
-    }
-
-    // Dots
-    particles.forEach(p => {
-      p.update();
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(167,139,250,${p.alpha})`;
-      ctx.fill();
-    });
-
-    requestAnimationFrame(draw);
+      particles.forEach(p => {
+        p.update();
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(167,139,250,${p.alpha})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    })();
   }
 
-  const ro = new ResizeObserver(resize);
-  ro.observe(canvas.parentElement);
+  // ── Resume modal ──
+  const resumeBtn   = document.getElementById('resumeBtn');
+  const resumeModal = document.getElementById('resumeModal');
+  const resumeClose = document.getElementById('resumeClose');
 
-  init();
-  draw();
-})();
+  function openModal()  {
+    resumeModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    resumeModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-// ── Contact form ──
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', async (e) => {
-    const btn = form.querySelector('[type="submit"]');
-    // If using Formspree or similar, let it handle naturally.
-    // Add basic loading state:
-    btn.textContent = '送信中...';
-    btn.disabled = true;
+  if (resumeBtn && resumeModal) {
+    resumeBtn.addEventListener('click', openModal);
+    resumeClose.addEventListener('click', closeModal);
+    resumeModal.addEventListener('click', (e) => {
+      if (e.target === resumeModal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  }
 
-    // If action URL is placeholder, show a message instead.
-    if (form.action.includes('YOUR_FORM_ID')) {
+  // ── Contact form (fetch → inline thank you) ──
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      btn.textContent = '✓ フォームの設定が必要です';
-      setTimeout(() => {
-        btn.textContent = '送信する';
+      const btn      = form.querySelector('[type="submit"]');
+      const success  = document.getElementById('formSuccess');
+      const origText = btn.textContent;
+
+      btn.disabled = true;
+      btn.textContent = '…';
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.hidden = true;
+          success.hidden = false;
+        } else {
+          throw new Error('send failed');
+        }
+      } catch {
         btn.disabled = false;
-      }, 3000);
-    }
-    // Otherwise let the form submit normally to Formspree.
-  });
-}
+        btn.textContent = origText;
+        alert('送信に失敗しました。時間をおいて再度お試しください。');
+      }
+    });
+  }
+
+}); // DOMContentLoaded

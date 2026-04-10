@@ -4,11 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Noboru Hayashi — Senior Machine Learning Scientist. VLM・LLM・Earth Observation AI・MLOps のフリーランス専門家。nobox.jp">
+
+  <!-- OGP / Social -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://nobox.jp/">
+  <meta property="og:title"       content="Noboru Hayashi — Machine Learning Scientist">
+  <meta property="og:description" content="Vision-Language Models・LLM・Earth Observation AI — 研究から本番デプロイまで一気通貫でコミットするフリーランス ML Scientist。">
+  <meta property="og:image"       content="https://nobox.jp/assets/img/profile.jpg">
+  <meta name="twitter:card"        content="summary">
+  <meta name="twitter:title"       content="Noboru Hayashi — Machine Learning Scientist">
+  <meta name="twitter:description" content="Vision-Language Models・LLM・Earth Observation AI — 研究から本番デプロイまで一気通貫。">
+  <meta name="twitter:image"       content="https://nobox.jp/assets/img/profile.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
   <title>Noboru Hayashi — Machine Learning Scientist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics (GA4) — Measurement ID を設定してください -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script> -->
 </head>
 <body>
 
@@ -50,6 +74,7 @@
       <div class="hero-actions">
         <a href="#services" class="btn btn-primary" data-i18n="hero.btn-services">サービスを見る</a>
         <a href="#contact"  class="btn btn-ghost"   data-i18n="hero.btn-contact">お問い合わせ</a>
+        <button class="btn btn-ghost" id="resumeBtn" data-i18n="hero.btn-resume">履歴書を見る</button>
       </div>
     </div>
     <div class="hero-bg">
@@ -64,7 +89,10 @@
       <h2 class="section-title" data-i18n="about.title">こんにちは</h2>
       <div class="about-grid">
         <div class="about-photo">
-          <img src="assets/img/profile.jpg" alt="Noboru Hayashi" loading="lazy">
+          <picture>
+            <source srcset="assets/img/profile.webp" type="image/webp">
+            <img src="assets/img/profile.jpg" alt="Noboru Hayashi" loading="lazy">
+          </picture>
         </div>
         <div class="about-text">
           <p data-i18n="about.p1">Amazon でデータサイエンティストとして約 8 年間、文書 AI・マルチモーダルモデル・NLP システムを大規模プロダクションで開発。現在は Degas Ltd. にて Senior Machine Learning Scientist として、JAXA 宇宙探査基金向けの集合知基盤モデルや、Earth Observation AI の研究開発をリードしています。</p>
@@ -304,6 +332,9 @@
         <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.submit">送信する</button>
         <p class="form-note" data-i18n="contact.note">* は必須項目です</p>
       </form>
+      <div class="form-success" id="formSuccess" hidden>
+        <p data-i18n="contact.success">ありがとうございます。2営業日以内にご返信します。</p>
+      </div>
     </div>
   </section>
 
@@ -330,6 +361,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Resume modal -->
+  <div class="modal-overlay" id="resumeModal">
+    <div class="modal">
+      <button class="modal-close" id="resumeClose" aria-label="閉じる">&times;</button>
+      <iframe src="assets/resume.pdf#toolbar=0&navpanes=0&scrollbar=1" title="Resume" loading="lazy"></iframe>
+    </div>
+  </div>
 
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>

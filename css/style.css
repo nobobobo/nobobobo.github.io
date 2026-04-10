@@ -154,6 +154,36 @@ input, textarea, select {
   background: rgba(167, 139, 250, 0.1);
 }
 
+/* ── Logo strip ── */
+.logo-strip {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.logo-strip-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-strip-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 4rem);
+  flex-wrap: wrap;
+}
+.logo-strip-logos img {
+  transition: opacity var(--transition);
+}
+.logo-strip-logos img[alt="Degas Ltd."] {
+  filter: brightness(10);
+}
+
 /* ── Hero ── */
 .hero {
   position: relative;
@@ -195,6 +225,13 @@ input, textarea, select {
   max-width: 540px;
   margin-bottom: 2.5rem;
   line-height: 1.8;
+}
+.hero-easter-egg {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 1.5rem;
+  opacity: 0.5;
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero-bg {

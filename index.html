@@ -20,11 +20,18 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#about"    data-i18n="nav.about">About</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#skills"   data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+        <li><a href="#contact"  data-i18n="nav.contact" class="nav-cta">Contact</a></li>
+        <li class="lang-switcher">
+          <button class="lang-btn active" data-lang="ja">JP</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <span class="lang-sep">|</span>
+          <button class="lang-btn" data-lang="zh">中</button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -32,18 +39,17 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-inner">
-      <div class="hero-tag">Senior Machine Learning Scientist</div>
+      <div class="hero-tag" data-i18n="hero.tag">Senior Machine Learning Scientist</div>
       <h1 class="hero-title">
         Noboru Hayashi<br>
         <span class="accent">林 延</span>
       </h1>
-      <p class="hero-sub">
-        Vision-Language Models・LLM・Earth Observation AI——<br>
-        研究から本番デプロイまで一気通貫でコミットします。
+      <p class="hero-sub" data-i18n-html="hero.subtitle">
+        Vision-Language Models・LLM・Earth Observation AI——<br>研究から本番デプロイまで一気通貫でコミットします。
       </p>
       <div class="hero-actions">
-        <a href="#services" class="btn btn-primary">サービスを見る</a>
-        <a href="#contact" class="btn btn-ghost">お問い合わせ</a>
+        <a href="#services" class="btn btn-primary" data-i18n="hero.btn-services">サービスを見る</a>
+        <a href="#contact"  class="btn btn-ghost"   data-i18n="hero.btn-contact">お問い合わせ</a>
       </div>
     </div>
     <div class="hero-bg">
@@ -55,31 +61,25 @@
   <section class="section" id="about">
     <div class="container">
       <div class="section-label">About</div>
-      <h2 class="section-title">こんにちは</h2>
+      <h2 class="section-title" data-i18n="about.title">こんにちは</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>
-            Amazon でデータサイエンティストとして約 8 年間、文書 AI・マルチモーダルモデル・NLP システムを大規模プロダクションで開発。現在は Degas Ltd. にて Senior Machine Learning Scientist として、JAXA 宇宙探査基金向けの集合知基盤モデルや、Earth Observation AI の研究開発をリードしています。
-          </p>
-          <p>
-            Vision-Language Models (VLM) のファインチューニングで GeoBench ベンチマーク SOTA を達成するなど、研究と実装の両面で実績を積んでいます。
-          </p>
-          <p>
-            Boston University で数学の BA/MA を、Johns Hopkins University でデータサイエンスの修士を取得。日本語・英語・中国語のトリリンガルとして、国際的なプロジェクトにも対応します。
-          </p>
+          <p data-i18n="about.p1">Amazon でデータサイエンティストとして約 8 年間、文書 AI・マルチモーダルモデル・NLP システムを大規模プロダクションで開発。現在は Degas Ltd. にて Senior Machine Learning Scientist として、JAXA 宇宙探査基金向けの集合知基盤モデルや、Earth Observation AI の研究開発をリードしています。</p>
+          <p data-i18n="about.p2">Vision-Language Models (VLM) のファインチューニングで GeoBench ベンチマーク SOTA を達成するなど、研究と実装の両面で実績を積んでいます。</p>
+          <p data-i18n="about.p3">Boston University で数学の BA/MA を、Johns Hopkins University でデータサイエンスの修士を取得。日本語・英語・中国語のトリリンガルとして、国際的なプロジェクトにも対応します。</p>
         </div>
         <div class="about-stats">
           <div class="stat">
             <div class="stat-num">8<span>+</span></div>
-            <div class="stat-label">年の経験</div>
+            <div class="stat-label" data-i18n="about.stat1">年の経験</div>
           </div>
           <div class="stat">
             <div class="stat-num">SOTA</div>
-            <div class="stat-label">GeoBench 達成</div>
+            <div class="stat-label" data-i18n="about.stat2">GeoBench 達成</div>
           </div>
           <div class="stat">
             <div class="stat-num">3</div>
-            <div class="stat-label">言語対応</div>
+            <div class="stat-label" data-i18n="about.stat3">言語対応</div>
           </div>
         </div>
       </div>
@@ -90,49 +90,49 @@
   <section class="section section-dark" id="services">
     <div class="container">
       <div class="section-label">Services</div>
-      <h2 class="section-title">提供サービス</h2>
+      <h2 class="section-title" data-i18n="services.title">提供サービス</h2>
       <div class="services-grid">
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .03 2.81-1.407 2.507l-1.97-.394A9.065 9.065 0 0112 18a9.065 9.065 0 01-2.825-.185l-1.97.395c-1.44.303-2.408-1.507-1.408-2.507L5 14.5"/></svg>
           </div>
-          <h3>ML モデル開発</h3>
-          <p>分類・回帰・異常検知・推薦システムなど、ビジネス要件に合わせたモデルを設計・実装します。</p>
+          <h3 data-i18n="service1.title">ML モデル開発</h3>
+          <p  data-i18n="service1.desc">分類・回帰・異常検知・推薦システムなど、ビジネス要件に合わせたモデルを設計・実装します。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
           </div>
-          <h3>LLM / 生成 AI 活用</h3>
-          <p>RAG、ファインチューニング、エージェント構築など、大規模言語モデルをプロダクトに組み込みます。</p>
+          <h3 data-i18n="service2.title">LLM / 生成 AI 活用</h3>
+          <p  data-i18n="service2.desc">RAG、ファインチューニング、エージェント構築など、大規模言語モデルをプロダクトに組み込みます。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
           </div>
-          <h3>データパイプライン構築</h3>
-          <p>データ収集・前処理・特徴量エンジニアリングから MLOps パイプラインまで、堅牢な基盤を構築します。</p>
+          <h3 data-i18n="service3.title">データパイプライン構築</h3>
+          <p  data-i18n="service3.desc">データ収集・前処理・特徴量エンジニアリングから MLOps パイプラインまで、堅牢な基盤を構築します。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605"/></svg>
           </div>
-          <h3>技術コンサルティング</h3>
-          <p>AI 導入戦略の立案、技術選定のアドバイス、既存システムの ML 化検討など、上流から支援します。</p>
+          <h3 data-i18n="service4.title">技術コンサルティング</h3>
+          <p  data-i18n="service4.desc">AI 導入戦略の立案、技術選定のアドバイス、既存システムの ML 化検討など、上流から支援します。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0H3"/></svg>
           </div>
-          <h3>研究・論文サポート</h3>
-          <p>実験設計、再現実装、論文執筆支援など、アカデミックな文脈でのサポートも対応します。</p>
+          <h3 data-i18n="service5.title">研究・論文サポート</h3>
+          <p  data-i18n="service5.desc">実験設計、再現実装、論文執筆支援など、アカデミックな文脈でのサポートも対応します。</p>
         </div>
         <div class="service-card">
           <div class="service-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
           </div>
-          <h3>社内勉強会・講義</h3>
-          <p>機械学習の基礎から最新トレンドまで、チームのレベルに合わせたワークショップを提供します。</p>
+          <h3 data-i18n="service6.title">社内勉強会・講義</h3>
+          <p  data-i18n="service6.desc">機械学習の基礎から最新トレンドまで、チームのレベルに合わせたワークショップを提供します。</p>
         </div>
       </div>
     </div>
@@ -142,10 +142,10 @@
   <section class="section" id="skills">
     <div class="container">
       <div class="section-label">Skills</div>
-      <h2 class="section-title">技術スタック</h2>
+      <h2 class="section-title" data-i18n="skills.title">技術スタック</h2>
       <div class="skills-wrapper">
         <div class="skill-group">
-          <h3 class="skill-group-title">ML &amp; AI</h3>
+          <h3 class="skill-group-title" data-i18n-html="skills.group1">ML &amp; AI</h3>
           <div class="skill-tags">
             <span class="tag">Vision-Language Models</span>
             <span class="tag">Large Language Models</span>
@@ -158,7 +158,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3 class="skill-group-title">Frameworks &amp; Libraries</h3>
+          <h3 class="skill-group-title" data-i18n-html="skills.group2">Frameworks &amp; Libraries</h3>
           <div class="skill-tags">
             <span class="tag">PyTorch</span>
             <span class="tag">TensorFlow</span>
@@ -170,7 +170,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3 class="skill-group-title">Cloud, Data &amp; MLOps</h3>
+          <h3 class="skill-group-title" data-i18n-html="skills.group3">Cloud, Data &amp; MLOps</h3>
           <div class="skill-tags">
             <span class="tag">AWS SageMaker</span>
             <span class="tag">AWS EMR / Glue</span>
@@ -182,7 +182,7 @@
           </div>
         </div>
         <div class="skill-group">
-          <h3 class="skill-group-title">Languages &amp; DB</h3>
+          <h3 class="skill-group-title" data-i18n-html="skills.group4">Languages &amp; DB</h3>
           <div class="skill-tags">
             <span class="tag">Python</span>
             <span class="tag">SQL</span>
@@ -201,7 +201,7 @@
   <section class="section section-dark" id="projects">
     <div class="container">
       <div class="section-label">Projects</div>
-      <h2 class="section-title">実績・プロジェクト</h2>
+      <h2 class="section-title" data-i18n="projects.title">実績・プロジェクト</h2>
       <div class="projects-grid">
         <article class="project-card">
           <div class="project-meta">
@@ -209,47 +209,46 @@
             <span class="project-tag">Earth Observation</span>
             <span class="project-tag">JAXA</span>
           </div>
-          <h3>衛星画像向け VLM — GeoBench SOTA</h3>
-          <p>JAXA 宇宙探査基金のプロジェクトにて、Earth Observation 向け Vision-Language Model をファインチューニング。GeoBench ベンチマークの Tree Health 評価・Wildfire Risk Prediction タスクで State-of-the-Art を達成。</p>
+          <h3 data-i18n="project1.title">衛星画像向け VLM — GeoBench SOTA</h3>
+          <p  data-i18n="project1.desc">JAXA 宇宙探査基金のプロジェクトにて、Earth Observation 向け Vision-Language Model をファインチューニング。GeoBench ベンチマークの Tree Health 評価・Wildfire Risk Prediction タスクで State-of-the-Art を達成。</p>
         </article>
         <article class="project-card">
           <div class="project-meta">
             <span class="project-tag">Foundation Model</span>
-            <span class="project-tag">集合知</span>
+            <span class="project-tag">JAXA</span>
           </div>
-          <h3>宇宙探査向け集合知基盤モデル</h3>
-          <p>Degas Ltd. にて、JAXA 向け集合知モデルの基盤アーキテクチャを設計・開発。複数の Foundation Models を組み合わせ、航空宇宙・リモートセンシング分野の高度な応用を実現。</p>
+          <h3 data-i18n="project2.title">宇宙探査向け集合知基盤モデル</h3>
+          <p  data-i18n="project2.desc">Degas Ltd. にて、JAXA 向け集合知モデルの基盤アーキテクチャを設計・開発。複数の Foundation Models を組み合わせ、航空宇宙・リモートセンシング分野の高度な応用を実現。</p>
         </article>
         <article class="project-card">
           <div class="project-meta">
             <span class="project-tag">CNN</span>
-            <span class="project-tag">文書 AI</span>
+            <span class="project-tag">OCR</span>
             <span class="project-tag">Amazon</span>
           </div>
-          <h3>文書画像処理パイプライン</h3>
-          <p>コーナー点検出による自動クロップ・変換の CNN パイプラインを構築。OCR 精度を 60% 向上、モデル推論時間を 98% 削減し、大規模プロダクションに導入。</p>
+          <h3 data-i18n="project3.title">文書画像処理パイプライン</h3>
+          <p  data-i18n="project3.desc">コーナー点検出による自動クロップ・変換の CNN パイプラインを構築。OCR 精度を 60% 向上、モデル推論時間を 98% 削減し、大規模プロダクションに導入。</p>
         </article>
         <article class="project-card">
           <div class="project-meta">
             <span class="project-tag">Multimodal</span>
-            <span class="project-tag">OCR</span>
             <span class="project-tag">Amazon</span>
           </div>
-          <h3>マルチモーダルレシート情報抽出</h3>
-          <p>OCR テキストトークンを構造化エンティティに分類するマルチモーダルモデルを設計・デプロイ。情報抽出精度を 18% 向上させ、購買データの活用基盤を強化。</p>
+          <h3 data-i18n="project4.title">マルチモーダルレシート情報抽出</h3>
+          <p  data-i18n="project4.desc">OCR テキストトークンを構造化エンティティに分類するマルチモーダルモデルを設計・デプロイ。情報抽出精度を 18% 向上させ、購買データの活用基盤を強化。</p>
         </article>
         <article class="project-card">
           <div class="project-meta">
             <span class="project-tag">CNN</span>
             <span class="project-tag">GNN</span>
-            <span class="project-tag">重複排除</span>
+            <span class="project-tag">Amazon</span>
           </div>
-          <h3>文書画像重複排除フレームワーク</h3>
-          <p>CNN と GNN を組み合わせたネットワークベースの文書画像重複排除システムを開発。従来の CV アプローチを大幅に上回るドキュメント理解精度を実現。</p>
+          <h3 data-i18n="project5.title">文書画像重複排除フレームワーク</h3>
+          <p  data-i18n="project5.desc">CNN と GNN を組み合わせたネットワークベースの文書画像重複排除システムを開発。従来の CV アプローチを大幅に上回るドキュメント理解精度を実現。</p>
         </article>
         <article class="project-card project-card-cta">
-          <p>あなたのプロジェクトをここに。</p>
-          <a href="#contact" class="btn btn-primary">相談してみる</a>
+          <p data-i18n="projects.cta">あなたのプロジェクトをここに。</p>
+          <a href="#contact" class="btn btn-primary" data-i18n="projects.cta-btn">相談してみる</a>
         </article>
       </div>
     </div>
@@ -259,28 +258,29 @@
   <section class="section" id="contact">
     <div class="container container-narrow">
       <div class="section-label">Contact</div>
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="contact-lead">
-        プロジェクトのご相談、お見積もり、その他のお問い合わせは以下のフォームからどうぞ。<br>
-        2営業日以内にご返信します。
+      <h2 class="section-title" data-i18n="contact.title">お問い合わせ</h2>
+      <p class="contact-lead" data-i18n-html="contact.lead">
+        プロジェクトのご相談、お見積もり、その他のお問い合わせは以下のフォームからどうぞ。<br>2営業日以内にご返信します。
       </p>
       <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdaprarl" method="POST">
         <div class="form-row">
           <div class="form-group">
-            <label for="name">お名前 <span class="req">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="山田 太郎">
+            <label for="name"><span data-i18n="contact.name-label">お名前</span> <span class="req">*</span></label>
+            <input type="text" id="name" name="name" required
+                   data-i18n-ph="contact.name-ph" placeholder="山田 太郎">
           </div>
           <div class="form-group">
-            <label for="company">会社名・屋号</label>
-            <input type="text" id="company" name="company" placeholder="株式会社 Example">
+            <label for="company"><span data-i18n="contact.company-label">会社名・屋号</span></label>
+            <input type="text" id="company" name="company"
+                   data-i18n-ph="contact.company-ph" placeholder="株式会社 Example">
           </div>
         </div>
         <div class="form-group">
-          <label for="email">メールアドレス <span class="req">*</span></label>
+          <label for="email"><span data-i18n="contact.email-label">メールアドレス</span> <span class="req">*</span></label>
           <input type="email" id="email" name="email" required placeholder="your@email.com">
         </div>
         <div class="form-group">
-          <label for="subject">件名</label>
+          <label for="subject"><span data-i18n="contact.subject-label">件名</span></label>
           <select id="subject" name="subject">
             <option value="">選択してください</option>
             <option value="ml-dev">ML モデル開発</option>
@@ -293,11 +293,13 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="message">メッセージ <span class="req">*</span></label>
-          <textarea id="message" name="message" required rows="5" placeholder="プロジェクトの概要や課題、ご要望などをお気軽にご記載ください。"></textarea>
+          <label for="message"><span data-i18n="contact.message-label">メッセージ</span> <span class="req">*</span></label>
+          <textarea id="message" name="message" required rows="5"
+                    data-i18n-ph="contact.message-ph"
+                    placeholder="プロジェクトの概要や課題、ご要望などをお気軽にご記載ください。"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">送信する</button>
-        <p class="form-note">* は必須項目です</p>
+        <button type="submit" class="btn btn-primary btn-full" data-i18n="contact.submit">送信する</button>
+        <p class="form-note" data-i18n="contact.note">* は必須項目です</p>
       </form>
     </div>
   </section>
@@ -308,14 +310,14 @@
       <div class="footer-inner">
         <div class="footer-brand">
           <span class="nav-logo">nobox</span>
-          <p>Machine Learning Scientist</p>
+          <p data-i18n="footer.sub">Machine Learning Scientist</p>
         </div>
         <nav class="footer-nav">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#about"    data-i18n="nav.about">About</a>
+          <a href="#services" data-i18n="nav.services">Services</a>
+          <a href="#skills"   data-i18n="nav.skills">Skills</a>
+          <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#contact"  data-i18n="nav.contact">Contact</a>
           <a href="https://www.linkedin.com/in/noboruhayashi/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/nobobobo" target="_blank" rel="noopener">GitHub</a>
         </nav>
@@ -326,6 +328,7 @@
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

@@ -125,6 +125,35 @@ input, textarea, select {
   transition: var(--transition);
 }
 
+/* ── Language switcher ── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+.lang-sep {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  user-select: none;
+}
+.lang-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: color var(--transition), background var(--transition);
+  letter-spacing: 0.05em;
+}
+.lang-btn:hover { color: var(--text-muted); }
+.lang-btn.active {
+  color: var(--accent-2);
+  background: rgba(167, 139, 250, 0.1);
+}
+
 /* ── Hero ── */
 .hero {
   position: relative;
@@ -519,6 +548,14 @@ input, textarea, select {
     border-bottom: 1px solid var(--border);
   }
   .nav-links.open { transform: translateY(0); }
+  .lang-switcher {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+    margin-left: 0;
+    justify-content: center;
+  }
   .about-grid {
     grid-template-columns: 1fr;
   }

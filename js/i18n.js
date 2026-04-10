@@ -286,12 +286,24 @@ function applyLang(lang) {
   localStorage.setItem('nobox-lang', lang);
 }
 
+// ── Detect language from browser ──
+function detectLang() {
+  const saved = localStorage.getItem('nobox-lang');
+  if (saved) return saved; // ユーザーが手動で選択した言語を優先
+
+  const br = (navigator.language || navigator.userLanguage || 'ja').toLowerCase();
+  if (br.startsWith('zh')) return 'zh';
+  if (br.startsWith('ja')) return 'ja';
+  return 'en'; // その他は英語
+}
+
 // ── Init ──
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    btn.addEventListener('click', () => {
+      applyLang(btn.dataset.lang);
+    });
   });
 
-  const saved = localStorage.getItem('nobox-lang') || 'ja';
-  applyLang(saved);
+  applyLang(detectLang());
 });

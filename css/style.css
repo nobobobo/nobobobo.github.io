@@ -93,25 +93,28 @@ input, textarea, select {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  padding-top: env(safe-area-inset-top);
+  /* safe-area-inset-top でノッチ・Dynamic Island 分を押し下げる */
+  padding-top: env(safe-area-inset-top, 0px);
   transition: background var(--transition), backdrop-filter var(--transition), border-color var(--transition);
   border-bottom: 1px solid transparent;
 }
 .nav.scrolled {
-  background: rgba(10, 10, 15, 0.85);
+  background: rgba(10, 10, 15, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-color: var(--border);
 }
+[data-theme="light"] .nav {
+  background: rgba(248, 248, 252, 0.6);
+}
 [data-theme="light"] .nav.scrolled {
-  background: rgba(248, 248, 252, 0.88);
+  background: rgba(248, 248, 252, 0.92);
 }
 .nav-inner {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 48px);
   height: var(--nav-height);
-  margin-top: env(safe-area-inset-top, 0px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -261,7 +264,7 @@ input, textarea, select {
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: calc(var(--nav-height) + env(safe-area-inset-top) + 40px) clamp(20px, 5vw, 48px) 80px;
+  padding: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 40px) clamp(20px, 5vw, 48px) 80px;
 }
 .hero-inner {
   max-width: 1160px;

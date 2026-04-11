@@ -4,10 +4,27 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ── Nav scroll effect ──
+  // ── Theme toggle ──
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme  = localStorage.getItem('nobox-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next    = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('nobox-theme', next);
+  });
+
+  // ── Scroll progress bar ──
+  const progressBar = document.getElementById('progressBar');
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
+    const scrollTop  = window.scrollY;
+    const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    const progress   = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = progress + '%';
+    nav.classList.toggle('scrolled', scrollTop > 20);
   }, { passive: true });
 
   // ── Mobile nav toggle ──

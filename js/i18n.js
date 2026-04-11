@@ -283,6 +283,14 @@ function applyLang(lang) {
   // html lang attribute
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
 
+  // meta description
+  const descriptions = {
+    ja: 'Noboru Hayashi（林延）— Vision-Language Models・LLM・Earth Observation AI のフリーランス Senior ML Scientist。nobox.jp',
+    en: 'Noboru Hayashi — Freelance Senior Machine Learning Scientist specializing in VLMs, LLMs, Earth Observation AI, and MLOps. nobox.jp',
+    zh: '林延（Noboru Hayashi）— 专注于视觉语言模型、大语言模型、地球观测AI与MLOps的自由职业高级机器学习科学家。nobox.jp'
+  };
+  document.querySelector('meta[name="description"]').setAttribute('content', descriptions[lang] || descriptions.ja);
+
   // Update active button
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);

@@ -49,7 +49,11 @@
 
 /* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  scroll-padding-top: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
+}
 body {
   background: var(--bg);
   color: var(--text);
@@ -93,22 +97,15 @@ input, textarea, select {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  /* safe-area-inset-top でノッチ・Dynamic Island 分を押し下げる */
   padding-top: env(safe-area-inset-top, 0px);
-  transition: background var(--transition), backdrop-filter var(--transition), border-color var(--transition);
-  border-bottom: 1px solid transparent;
-}
-.nav.scrolled {
-  background: rgba(10, 10, 15, 0.92);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-color: var(--border);
+  transition: background var(--transition), border-color var(--transition);
 }
 [data-theme="light"] .nav {
-  background: rgba(248, 248, 252, 0.6);
-}
-[data-theme="light"] .nav.scrolled {
-  background: rgba(248, 248, 252, 0.92);
+  background: var(--bg);
 }
 .nav-inner {
   max-width: 1160px;
@@ -264,7 +261,7 @@ input, textarea, select {
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 40px) clamp(20px, 5vw, 48px) 80px;
+  padding: calc(var(--nav-height) + env(safe-area-inset-top, 0px) + 60px) clamp(20px, 5vw, 48px) 80px;
 }
 .hero-inner {
   max-width: 1160px;
@@ -721,7 +718,7 @@ input, textarea, select {
   .nav-links {
     position: fixed;
     top: calc(var(--nav-height) + env(safe-area-inset-top, 0px)); left: 0; right: 0;
-    background: rgba(10, 10, 15, 0.97);
+    background: var(--bg);
     backdrop-filter: blur(16px);
     flex-direction: column;
     padding: 1.5rem;
